@@ -17,7 +17,6 @@ void setup() {
 }
 
 void loop() {
-    // Wait for a BLE central to connect
     BLEDevice central = BLE.central();
 
     if (central) {
