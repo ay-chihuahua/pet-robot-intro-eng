@@ -3,6 +3,8 @@
 void setup() {
     pinMode(LED_PIN, OUTPUT);
     digitalWrite(LED_PIN, LOW);
+
+    while (!Serial);
     Serial.begin(9600);
 
     Serial.println("Secondary Arduino ready and working!");
