@@ -1,5 +1,7 @@
 #define LED_PIN 8 
 
+string trimCommand(command);
+
 void setup() {
     pinMode(LED_PIN, OUTPUT);
     digitalWrite(LED_PIN, LOW);
@@ -16,10 +18,12 @@ void setup() {
 */
 void loop() {
     if (Serial.available() > 0) {
-        String command = Serial.readStringUntil('\n');
+        /*String command = Serial.readStringUntil('\n');
         command.trim();
         Serial.print("Received command from Primary Arduino: ");
-        Serial.println(command);
+        Serial.println(command);*/
+
+        trimCommand(command);
 
         if (command == "toggle") {
             digitalWrite(LED_PIN, !digitalRead(LED_PIN)); 
@@ -29,3 +33,13 @@ void loop() {
         }
     }
 }
+
+// /*
+string trimCommand(command){
+        String command = Serial.readStringUntil('\n');
+        command.trim();
+        Serial.print("Received command from Primary Arduino: ");
+        Serial.println(command);
+    return command;
+}
+// */
