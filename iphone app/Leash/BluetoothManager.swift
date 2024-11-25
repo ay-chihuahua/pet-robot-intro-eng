@@ -100,4 +100,56 @@ class BluetoothManager: NSObject, ObservableObject, CBCentralManagerDelegate, CB
             print("Sent toggle command.")
         }
     }
+    
+    func walkForward() {
+        guard let toggleCharacteristic = toggleCharacteristic else {
+            print("Toggle characteristic not found!")
+            return
+        }
+
+        let command = "walkForward"
+        if let data = command.data(using: .utf8) {
+            selectedPeripheral?.writeValue(data, for: toggleCharacteristic, type: .withResponse)
+            print("Sent walkForward command.")
+        }
+    }
+    
+    func walkBackwards() {
+        guard let toggleCharacteristic = toggleCharacteristic else {
+            print("Toggle characteristic not found!")
+            return
+        }
+
+        let command = "walkBackwards"
+        if let data = command.data(using: .utf8) {
+            selectedPeripheral?.writeValue(data, for: toggleCharacteristic, type: .withResponse)
+            print("Sent walkBackwards command.")
+        }
+    }
+    
+    func layDown() {
+        guard let toggleCharacteristic = toggleCharacteristic else {
+            print("Toggle characteristic not found!")
+            return
+        }
+
+        let command = "layDown"
+        if let data = command.data(using: .utf8) {
+            selectedPeripheral?.writeValue(data, for: toggleCharacteristic, type: .withResponse)
+            print("Sent layDown command.")
+        }
+    }
+    
+    func bark() {
+        guard let toggleCharacteristic = toggleCharacteristic else {
+            print("Toggle characteristic not found!")
+            return
+        }
+
+        let command = "bark"
+        if let data = command.data(using: .utf8) {
+            selectedPeripheral?.writeValue(data, for: toggleCharacteristic, type: .withResponse)
+            print("Sent bark command.")
+        }
+    }
 }
