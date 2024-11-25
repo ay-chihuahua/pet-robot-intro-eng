@@ -32,8 +32,7 @@ struct ContentView: View {
             }
             .padding()
 
-            // Button to toggle the LED
-            Button(action: {
+            Button(action: { // Button to toggle the LED
                 bluetoothManager.toggleLED()
             }) {
                 Text("Toggle LED")
@@ -44,6 +43,55 @@ struct ContentView: View {
                     .cornerRadius(10)
             }
             .padding()
+           
+            Button(action: { // Button to walk forward
+                bluetoothManager.walkForward()
+            }) {
+                Text("Walk Forward")
+                    .font(.title2)
+                    .padding()
+                    .background(Color.green)
+                    .foregroundColor(.white)
+                    .cornerRadius(10)
+            }
+            .padding()
+            
+            Button(action: { // Button to walk backwards
+                bluetoothManager.walkBackwards()
+            }) {
+                Text("Walk Backwards")
+                    .font(.title2)
+                    .padding()
+                    .background(Color.green)
+                    .foregroundColor(.white)
+                    .cornerRadius(10)
+            }
+            .padding()
+            
+            Button(action: { // Button to lay down
+                bluetoothManager.layDown()
+            }) {
+                Text("Lay down")
+                    .font(.title2)
+                    .padding()
+                    .background(Color.green)
+                    .foregroundColor(.white)
+                    .cornerRadius(10)
+            }
+            .padding()
+            
+            Button(action: { // Button to bark
+                bluetoothManager.bark()
+            }) {
+                Text("Speak")
+                    .font(.title2)
+                    .padding()
+                    .background(Color.green)
+                    .foregroundColor(.white)
+                    .cornerRadius(10)
+            }
+            .padding()
+            
         }
     }
 }
