@@ -20,10 +20,17 @@ void loop() {
         Serial.println(command);
 
         if (command == "toggle") {
-            digitalWrite(LED_PIN, !digitalRead(LED_PIN)); 
-            Serial.println("LED state toggled on Secondary Arduino.");
+            digitalWrite(LED_PIN, !digitalRead(LED_PIN)); // command used to test code
+            Serial.println("LED command sent.");
+        } else if(command == "walkForward"){
+            Serial.println("Walk forward command sent.");
+        } else if(command == "walkBackwards"){
+            Serial.println("Walk backwards command sent.");
+        } else if(command == "layDown"){
+            Serial.println("Lay down command sent.");
+        } else if (command == "bark"){
+            Serial.println("Bark command sent.");
         } else {
-            Serial.println("Unknown command received.");
+            Serial.println("Unknown command sent"); // In case there is an error with
         }
-    }
 }
